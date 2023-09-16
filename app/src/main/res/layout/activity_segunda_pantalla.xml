@@ -7,6 +7,18 @@
     android:background="@color/Color2"
     tools:context=".Segunda_Pantalla">
 
+    <Button
+        android:id="@+id/btnvolver"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/Color3"
+        android:text="Volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -58,21 +70,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.095" />
-
-    <Button
-        android:id="@+id/btnvolver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/Color3"
-        android:backgroundTint="@color/Color3"
-        android:text="Volver"
-        android:textColorHighlight="@color/Color3"
-        android:textColorLink="@color/Color3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtresultado1"
-        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
