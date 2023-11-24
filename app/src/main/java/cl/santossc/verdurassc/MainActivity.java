@@ -9,12 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 
 public class MainActivity extends AppCompatActivity {
     Button calcular;
     EditText Verduras, Hectarea;
     Button Limpiar;
+
+    FirebaseDatabase firebaseDatabase;
+
+    DatabaseReference databaseReference;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 String multiplicacion = String.valueOf(multiplicacionStr);
                 intent.putExtra("resultado",multiplicacion.toString());
                 startActivity(intent);
+
+
+            }
+        });
+        calcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference.child("Verduras").setValue(Verduras.getText().toString());
+                databaseReference.child("Hectarea").setValue(Hectarea.getText().toString());
             }
         });
         Limpiar.setOnClickListener(new View.OnClickListener() {

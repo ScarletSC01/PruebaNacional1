@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+
 public class Segunda_Pantalla extends AppCompatActivity {
     Button botonvolver;
     TextView TextoRecibido;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,4 +39,5 @@ public class Segunda_Pantalla extends AppCompatActivity {
 
 
     }
+
 }
