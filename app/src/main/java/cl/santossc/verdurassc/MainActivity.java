@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button calcular;
     EditText Verduras, Hectarea;
     Button Limpiar;
-
+    Button Almacenar;
     FirebaseDatabase firebaseDatabase;
 
     DatabaseReference databaseReference;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Hectarea = findViewById(R.id.txthectarea);
         calcular = findViewById(R.id.btncalcular);
         Limpiar = findViewById(R.id.btnLimpiar);
-
+        Almacenar = findViewById(R.id.btnAlmacenar);
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,13 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        calcular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                databaseReference.child("Verduras").setValue(Verduras.getText().toString());
-                databaseReference.child("Hectarea").setValue(Hectarea.getText().toString());
-            }
-        });
+
         Limpiar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +69,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Almacenar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference.child("Verduras").setValue(Verduras.getText().toString());
+                databaseReference.child("Hectarea").setValue(Hectarea.getText().toString());
 
+            }
+        });
 
 
 

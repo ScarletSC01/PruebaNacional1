@@ -10,9 +10,14 @@ import android.widget.TextView;
 
 
 
+
+
 public class Segunda_Pantalla extends AppCompatActivity {
     Button botonvolver;
     TextView TextoRecibido;
+    Button botonMQTT;
+
+
 
 
     @Override
@@ -24,6 +29,8 @@ public class Segunda_Pantalla extends AppCompatActivity {
         String resultado = getIntent().getStringExtra("resultado");
         TextoRecibido.setText(resultado);
         botonvolver = findViewById(R.id.btnvolver);
+        botonMQTT = findViewById(R.id.btnmqtt);
+
 
         botonvolver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +41,18 @@ public class Segunda_Pantalla extends AppCompatActivity {
                 );
                 startActivity(intent);
             }
-        });
 
+        });
+      botonMQTT.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(
+                      getApplicationContext(),
+                      MainActivity2.class
+              );
+              startActivity(intent);
+          }
+      });
 
 
     }
