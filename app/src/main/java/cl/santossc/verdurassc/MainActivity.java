@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                 databaseReference.child("Verduras").setValue(Verduras.getText().toString());
                 databaseReference.child("Hectarea").setValue(Hectarea.getText().toString());
 
+                // Almacenar datos adicionales
+                databaseReference.child("OtroDato").setValue("Otro dato adicional");
+                databaseReference.child("Fecha").setValue("2023-11-22");
             }
         });
 
